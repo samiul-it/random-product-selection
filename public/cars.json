@@ -1,0 +1,68 @@
+[
+      {
+        "id": 1,
+        "name": "Toyota",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 2,
+        "name": "Nissan",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 3,
+        "name": "AUDI",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 4,
+        "name": "BMW",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 5,
+        "name": "Proton",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 6,
+        "name": "Foton",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 7,
+        "name": "Suzuki",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 8,
+        "name": "GLORY",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 9,
+        "name": "ISUZU",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 10,
+        "name": "TATA",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      },
+      {
+        "id": 11,
+        "name": "Mitsubishi",
+        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "price": 10000
+      }
+    ]
