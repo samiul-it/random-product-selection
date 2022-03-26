@@ -9,3 +9,19 @@
     margin: 100px 50px;
 }
 
+@media only screen and (max-width:520px) {
+
+    .shop-ui{
+       display: grid;
+        grid-template-columns:1fr;
+    }
+    .products-container{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    margin: 50px 50px;
+}
+
+
+}
+

@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Cart from '../Cart/Cart';
 import Product from '../Products/Product';
 import './Shop.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckSquare,faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
+
 
 const Shop = () => {
-
 
     const [products, setProducts] = useState([]);
     let [cart, setCart] = useState([]);
@@ -79,8 +81,14 @@ const Shop = () => {
             ))}
           </h6>
           <h5>{finalSelected}</h5>
-          <button className='btn btn-success' onClick={showRandomItem}>Select Randomly</button>
-          <button className='btn btn-danger' onClick={clearCart}>Clear Cart</button>
+          <button className="btn btn-success" onClick={showRandomItem}>
+            Select Randomly
+            <FontAwesomeIcon icon={faCheckSquare} />
+          </button>
+          <button className="btn btn-danger" onClick={clearCart}>
+            Clear Cart
+            <FontAwesomeIcon icon={faDeleteLeft} />
+          </button>
         </div>
       </div>
     );
