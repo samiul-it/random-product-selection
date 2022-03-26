@@ -12,7 +12,6 @@ const Shop = () => {
     let [cart, setCart] = useState([]);
     const [finalSelected,setFinalSelected]=useState([]);
     
-
     useEffect(() => {
       fetch("cars.json")
         .then((response) => response.json())
@@ -20,11 +19,8 @@ const Shop = () => {
     }, []);
 
     const handleAddToCart = (selectedProduct) => {
-   
-      // console.log(selectedProduct);
 
-      let newCart = [];
-      
+      let newCart = []; 
       const exists = cart.find((product) => product.id === selectedProduct.id);
       if (!exists) {
         selectedProduct.quantity = 1;
@@ -39,20 +35,11 @@ const Shop = () => {
 
       setCart(newCart);   
     };
-
-
-
     const showRandomItem=()=>{
-
-
-      console.log(cart);
+      // console.log(cart);
       const random = Math.floor(Math.random() * cart.length);
-      // console.log(random, cart[random]);
       clearCart();
       setFinalSelected(cart[random].name);
-      
-      
-
     }
 
     const clearCart=()=>{
@@ -73,18 +60,17 @@ const Shop = () => {
         </div>
 
         <div className="cart-container">
-          Cart Container
-          <h3>{cart.length}</h3>
+          <p>Curretly Selected Items:{cart.length}</p>
           <h6>
             {cart.map((item) => (
               <Cart key={item.id} cart={item}></Cart>
             ))}
           </h6>
-          <h5>{finalSelected}</h5>
+          <h5>Selected Car:{finalSelected}</h5>
           <button className="btn btn-success" onClick={showRandomItem}>
-            Select Randomly
+            Select For Me
             <FontAwesomeIcon icon={faCheckSquare} />
-          </button>
+          </button> 
           <button className="btn btn-danger" onClick={clearCart}>
             Clear Cart
             <FontAwesomeIcon icon={faDeleteLeft} />
