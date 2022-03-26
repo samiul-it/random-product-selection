@@ -5,74 +5,6 @@ import './Shop.css';
 
 const Shop = () => {
 
-    // const cars = [
-    //   {
-    //     id: 1,
-    //     name: "Toyota",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 2,
-    //     name: "Nissan",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 3,
-    //     name: "AUDI",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 4,
-    //     name: "BMW",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 5,
-    //     name: "Proton",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 6,
-    //     name: "Foton",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 7,
-    //     name: "Suzuki",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 8,
-    //     name: "GLORY",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 9,
-    //     name: "ISUZU",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 10,
-    //     name: "TATA",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    //   {
-    //     id: 11,
-    //     name: "Mitsubishi",
-    //     img: "https://randomuser.me/api/portraits/men/75.jpg",
-    //     price: 10000,
-    //   },
-    // ];
 
     const [products, setProducts] = useState([]);
     let [cart, setCart] = useState([]);
@@ -83,28 +15,59 @@ const Shop = () => {
         .then((data) => setProducts(data));
     }, []);
 
-    const handleAddToCart = (product) => {
-    //   console.log(product);
-      const cartUpdate=[...cart,product];
-      setCart(cartUpdate);
+    const handleAddToCart = (selectedProduct) => {
+   
+      // console.log(selectedProduct);
+      let newCart = [];
+      const exists = cart.find((product) => product.id === selectedProduct.id);
+      if (!exists) {
+        selectedProduct.quantity = 1;
+        newCart = [...cart, selectedProduct];
+      } else {
+        const restItems = cart.filter(
+          (product) => product.id !== selectedProduct.id
+        );
+        exists.quantity = exists.quantity + 1;
+        newCart = [...restItems, exists];
+      }
+
+      setCart(newCart);
+
+      generateRandomNumber(newCart);
+
+      
+
+     
+      
 
       
     };
 
-    const clearCart=()=>{
-      //Emptying cart
 
-      const clearedCart=[];
+    const generateRandomNumber=(cartItems)=>{
+      const rndInt = Math.floor(Math.random() * 4) + 1;
+      const matchWithRandom = (id) => {
+        if (rndInt === id) {
+          console.log("Matched",cartItems);
+          cartItems.filter(cartItem=>console.log(cartItem.id
+          ));
+          
+        } else {
+          console.log("Does Not Matched");
+        }
+      };
+      cartItems.map(productId=>matchWithRandom(productId.id));
       
-      setCart=([]);
-      console.log(cart);
+
+      // console.log(cartItems);
     }
+    
+
 
 
     return (
       <div className="shop-ui">
-        <div className="shop-container">
-          Shop Contianer
+        <div className="products-container">
           {products.map((product) => (
             <Product
               key={product.id}
@@ -124,7 +87,7 @@ const Shop = () => {
             ))}
           </h6>
           <button>Select Randomly</button>
-          <button onClick={clearCart}>Clear Cart</button>
+          <button >Clear Cart</button>
         </div>
       </div>
     );
