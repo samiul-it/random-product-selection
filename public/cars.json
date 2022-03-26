@@ -2,7 +2,7 @@
       {
         "id": 1,
         "name": "Toyota",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2012/11/02/13/02/car-63930_960_720.jpg",
         "price": 10000
       },
       {
@@ -14,55 +14,55 @@
       {
         "id": 3,
         "name": "AUDI",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2014/09/07/22/34/car-race-438467_960_720.jpg",
         "price": 10000
       },
       {
         "id": 4,
         "name": "BMW",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2017/03/27/14/56/auto-2179220_960_720.jpg",
         "price": 10000
       },
       {
         "id": 5,
         "name": "Proton",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2015/07/11/23/13/mercedes-benz-841465_960_720.jpg",
         "price": 10000
       },
       {
         "id": 6,
         "name": "Foton",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2019/07/07/14/03/fiat-4322521_960_720.jpg",
         "price": 10000
       },
       {
         "id": 7,
         "name": "Suzuki",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2014/09/07/22/34/car-race-438467_960_720.jpg",
         "price": 10000
       },
       {
         "id": 8,
         "name": "GLORY",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2018/07/27/15/38/pickup-truck-3566304_960_720.jpg",
         "price": 10000
       },
       {
         "id": 9,
         "name": "ISUZU",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2016/02/13/13/11/oldtimer-1197800_960_720.jpg",
         "price": 10000
       },
       {
         "id": 10,
         "name": "TATA",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2017/03/05/15/29/aston-martin-2118857__340.jpg",
         "price": 10000
       },
       {
         "id": 11,
         "name": "Mitsubishi",
-        "img": "https://randomuser.me/api/portraits/men/75.jpg",
+        "img": "https://cdn.pixabay.com/photo/2016/09/11/10/02/renault-juvaquatre-1661009__340.jpg",
         "price": 10000
       }
     ]

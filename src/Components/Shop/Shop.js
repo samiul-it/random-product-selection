@@ -8,7 +8,7 @@ const Shop = () => {
 
     const [products, setProducts] = useState([]);
     let [cart, setCart] = useState([]);
-    const [finalSelected,setFinalSelected]=useState("");
+    const [finalSelected,setFinalSelected]=useState([]);
     
 
     useEffect(() => {
@@ -39,32 +39,16 @@ const Shop = () => {
     };
 
 
-    // const generateRandomNumber=(cartItems)=>{
-    //   const rndInt = Math.floor(Math.random() * 4) + 1;
-    //   const matchWithRandom = (id) => {
-    //     if (rndInt === id) {
-    //       // console.log("Matched",cartItems);
-    //       const randomlySelected=cartItems.filter(cartItem=>cartItem.id===id);
-    //       const randomItem=randomlySelected[0].name;
-    //       // return randomItem;
-    //       console.log(randomItem);
-    //     } else {
-    //       // console.log("Does Not Matched");
-    //     }
-    //   };
-    //   cartItems.map(productId=>matchWithRandom(productId.id));
-    // }
 
     const showRandomItem=()=>{
 
-      const rndInt = Math.floor(Math.random() * cart.length) + 1;
 
-      console.log("Random Button Clicked");
-      console.log("Random:",rndInt);
-      const randomItem=rndInt;
-      let selectedItem = cart.filter((item) => item.id === randomItem);
+      console.log(cart);
+      const random = Math.floor(Math.random() * cart.length);
+      // console.log(random, cart[random]);
       clearCart();
-      setFinalSelected(selectedItem[0].name);
+      setFinalSelected(cart[random].name);
+      
       
 
     }
@@ -73,10 +57,6 @@ const Shop = () => {
       setCart([]);
       console.log("Cart Cleared");
     }
-
-
-
-
 
     return (
       <div className="shop-ui">
