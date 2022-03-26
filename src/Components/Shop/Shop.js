@@ -8,6 +8,8 @@ const Shop = () => {
 
     const [products, setProducts] = useState([]);
     let [cart, setCart] = useState([]);
+    const [finalSelected,setFinalSelected]=useState("");
+    
 
     useEffect(() => {
       fetch("cars.json")
@@ -18,7 +20,9 @@ const Shop = () => {
     const handleAddToCart = (selectedProduct) => {
    
       // console.log(selectedProduct);
+
       let newCart = [];
+      
       const exists = cart.find((product) => product.id === selectedProduct.id);
       if (!exists) {
         selectedProduct.quantity = 1;
@@ -31,37 +35,46 @@ const Shop = () => {
         newCart = [...restItems, exists];
       }
 
-      setCart(newCart);
-
-      generateRandomNumber(newCart);
-
-      
-
-     
-      
-
-      
+      setCart(newCart);   
     };
 
 
-    const generateRandomNumber=(cartItems)=>{
-      const rndInt = Math.floor(Math.random() * 4) + 1;
-      const matchWithRandom = (id) => {
-        if (rndInt === id) {
-          console.log("Matched",cartItems);
-          cartItems.filter(cartItem=>console.log(cartItem.id
-          ));
-          
-        } else {
-          console.log("Does Not Matched");
-        }
-      };
-      cartItems.map(productId=>matchWithRandom(productId.id));
+    // const generateRandomNumber=(cartItems)=>{
+    //   const rndInt = Math.floor(Math.random() * 4) + 1;
+    //   const matchWithRandom = (id) => {
+    //     if (rndInt === id) {
+    //       // console.log("Matched",cartItems);
+    //       const randomlySelected=cartItems.filter(cartItem=>cartItem.id===id);
+    //       const randomItem=randomlySelected[0].name;
+    //       // return randomItem;
+    //       console.log(randomItem);
+    //     } else {
+    //       // console.log("Does Not Matched");
+    //     }
+    //   };
+    //   cartItems.map(productId=>matchWithRandom(productId.id));
+    // }
+
+    const showRandomItem=()=>{
+
+      const rndInt = Math.floor(Math.random() * cart.length) + 1;
+
+      console.log("Random Button Clicked");
+      console.log("Random:",rndInt);
+      const randomItem=rndInt;
+      let selectedItem = cart.filter((item) => item.id === randomItem);
+      clearCart();
+      setFinalSelected(selectedItem[0].name);
       
 
-      // console.log(cartItems);
     }
-    
+
+    const clearCart=()=>{
+      setCart([]);
+      console.log("Cart Cleared");
+    }
+
+
 
 
 
@@ -80,14 +93,14 @@ const Shop = () => {
         <div className="cart-container">
           Cart Container
           <h3>{cart.length}</h3>
-          {/* {cart.map((item) => console.log(item))} */}
           <h6>
             {cart.map((item) => (
               <Cart key={item.id} cart={item}></Cart>
             ))}
           </h6>
-          <button>Select Randomly</button>
-          <button >Clear Cart</button>
+          <h5>{finalSelected}</h5>
+          <button className='btn btn-success' onClick={showRandomItem}>Select Randomly</button>
+          <button className='btn btn-danger' onClick={clearCart}>Clear Cart</button>
         </div>
       </div>
     );
