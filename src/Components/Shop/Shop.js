@@ -44,7 +44,7 @@ const Shop = () => {
 
     const clearCart=()=>{
       setCart([]);
-      console.log("Cart Cleared");
+      // console.log("Cart Cleared");
     }
 
     return (
